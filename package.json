@@ -1,0 +1,30 @@
+{
+  "name": "foogle",
+  "version": "1.0.0",
+  "description": "furniture google",
+  "main": "server.js",
+  "scripts": {
+    "test": "a;",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skurtz92/foogle.git"
+  },
+  "keywords": [
+    "furniture",
+    "tops"
+  ],
+  "author": "Sydney, Marlo, Jose",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skurtz92/foogle/issues"
+  },
+  "homepage": "https://github.com/skurtz92/foogle#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "mysql": "^2.12.0",
+    "path": "^0.12.7",
+    "sequelize": "^3.25.0"
+  }
+}
