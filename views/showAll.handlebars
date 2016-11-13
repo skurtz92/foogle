@@ -1,0 +1,27 @@
+<div>
+	<h1>This page will display all items from inventory</h1>
+</div>
+
+<div>
+	
+<!--
+loop through database items returned from search and display each
+ -->
+    <ul>
+      {{#each inventory}}
+          <li>
+            Description: {{Description}}, 
+            Item Number: {{ItemNumber}}, 
+            Quantity - MAH: {{QuantityMAH}}, 
+            Quantity - CH: {{bodyQuantityCH}}, 
+            Quantity - ESP: {{QuantityESP}}, 
+            Quantity - HNY: {{QuantityHNY}} 
+            <form action="/delete/{{this.id}}" method="POST"> 
+            <input type="hidden" name="id" value="{{this.id}}">
+            <button type="submit">Delete item</button>
+
+          </li>
+      {{/each}}
+    </ul>
+
+</div>

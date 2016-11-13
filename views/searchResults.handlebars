@@ -1,0 +1,26 @@
+<div>
+	<h1>This will be the search results page, eventually with the delete and update inventory buttons</h1>
+</div>
+
+<div>
+	
+<!--
+loop through database items returned from search and display each
+ -->
+    <ul>
+      {{#each inventory}}
+          <li>
+            {{Description}}
+<!--
+input for changing item to done
+ -->
+            <form action="list/update/?" method="POST">
+              
+              <button name="isDone" value="true" type="submit">Done!</button>
+            </form>
+
+          </li>
+      {{/each}}
+    </ul>
+
+</div>
