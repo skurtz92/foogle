@@ -46,7 +46,7 @@ router.post("/create", function(req, res) {
 		Description: req.body.Description,
 		ItemNumber: req.body.ItemNumber,
 		QuantityMAH: req.body.QuantityMAH,
-		QuantityCH: req.bodyQuantityCH,
+		QuantityCH: req.body.QuantityCH,
 		QuantityESP: req.body.QuantityESP,
 		QuantityHNY: req.body.QuantityHNY
 	});
