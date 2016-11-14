@@ -21,11 +21,11 @@ router.get("/all", function(req, res) {
 });
 
 //search function - NOT WORKING
-router.get("/search/:term", function(req, res) {
-	//console.log("searched for: " + req.params.id);
+router.get("/search", function(req, res) {
+	console.log("searched for product id: " + req.query.term);
 	models.Item.findAll({
 		where: {
-			ItemNumber: req.body.term
+			ItemNumber: req.query.term
 		}
 	}).then(function(data) {
 		var itemObj = {inventory: data};
@@ -54,10 +54,11 @@ router.post("/create", function(req, res) {
 });
 
 //button to delete item from inventory
-router.post("/delete/:id", function(req, res) {
+router.post("/delete", function(req, res) {
+	console.log("delete query " + JSON.stringify(req.query));
 	models.Item.destroy({
 		where: {
-			id: req.params.id
+			id: req.query.id
 		}
 	});
 	res.redirect("/all");

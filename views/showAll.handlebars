@@ -6,6 +6,7 @@
 	
 <!--
 loop through database items returned from search and display each
+<input type="hidden" name="id" value="{{this.id}}">
  -->
     <ul>
       {{#each inventory}}
@@ -16,9 +17,10 @@ loop through database items returned from search and display each
             Quantity - CH: {{bodyQuantityCH}}, 
             Quantity - ESP: {{QuantityESP}}, 
             Quantity - HNY: {{QuantityHNY}} 
-            <form action="/delete/{{this.id}}" method="POST"> 
-            <input type="hidden" name="id" value="{{this.id}}">
+            <form action="/delete?id={{id}}" method="POST"> 
+            
             <button type="submit">Delete item</button>
+            </form>
 
           </li>
       {{/each}}
