@@ -1,5 +1,5 @@
 <div>
-	<h1>This will be the search results page, eventually with the delete and update inventory buttons</h1>
+	<h1>This page shows the search results, with the option to delete returned items.</h1>
 </div>
 
 <div>
@@ -10,13 +10,18 @@ loop through database items returned from search and display each
     <ul>
       {{#each inventory}}
           <li>
-            {{Description}}
+             Description: {{Description}}, 
+            Item Number: {{ItemNumber}}, 
+            Quantity - MAH: {{QuantityMAH}}, 
+            Quantity - CH: {{bodyQuantityCH}}, 
+            Quantity - ESP: {{QuantityESP}}, 
+            Quantity - HNY: {{QuantityHNY}} 
 <!--
-input for changing item to done
+input for deleting item
  -->
-            <form action="list/update/?" method="POST">
-              
-              <button name="isDone" value="true" type="submit">Done!</button>
+            <form action="/delete?id={{id}}" method="POST"> 
+            
+            <button type="submit">Delete item</button>
             </form>
 
           </li>

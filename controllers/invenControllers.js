@@ -20,7 +20,36 @@ router.get("/all", function(req, res) {
 	});
 });
 
-//search function - NOT WORKING
+//search function
+router.get("/search", function(req, res) {
+	//console.log("searched for product id: " + req.query.term);
+	models.Item.findAll({
+		where: {
+			$or: [{ItemNumber: req.query.term}, 
+				{Description: 
+					{like: "%" + req.query.term + "%"}}]
+		}
+	}).then(function(data) {
+		var itemObj = {inventory: data};
+		//console.log(itemObj);
+		res.render("searchResults", itemObj);
+	});
+});
+/*
+
+router.get("/search", function(req, res) {
+	//console.log("searched for product id: " + req.query.term);
+	models.Item.findAll({
+		where: {
+			$or: [{ItemNumber: req.query.term}, {Description: req.query.term}]
+		}
+	}).then(function(data) {
+		var itemObj = {inventory: data};
+		//console.log(itemObj);
+		res.render("searchResults", itemObj);
+	});
+});
+
 router.get("/search", function(req, res) {
 	console.log("searched for product id: " + req.query.term);
 	models.Item.findAll({
@@ -33,6 +62,7 @@ router.get("/search", function(req, res) {
 		res.render("searchResults", itemObj);
 	});
 });
+*/
 
 //go to form to add item to inventory
 router.get("/add", function (req, res) {
@@ -55,7 +85,7 @@ router.post("/create", function(req, res) {
 
 //button to delete item from inventory
 router.post("/delete", function(req, res) {
-	console.log("delete query " + JSON.stringify(req.query));
+	//console.log("delete query " + JSON.stringify(req.query));
 	models.Item.destroy({
 		where: {
 			id: req.query.id
