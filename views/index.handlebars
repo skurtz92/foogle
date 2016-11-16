@@ -1,41 +1,93 @@
-<div>
-	<h1>This will be the main page, with the search and add buttons</h1>
-</div>
+     <nav class="navbar navbar-dark navbar-fixed-top scrolling-navbar">
 
+        <!-- Collapse button-->
+        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx">
+            <i class="fa fa-bars"></i>
+        </button>
+
+        <div class="container">
+
+           
+            <!--/.Collapse content-->
+
+        </div>
+
+    </nav>
+    <!--/.Navbar-->
+
+    <!--Mask-->
+    <div class="view hm-black-strong">
+        <div class="full-bg-img flex-center">
+            <ul class="animated fadeInUp">
+                <li>
+                    <h1 class="h1-responsive" style="font-family: 'Diplomata SC', serif; font-size: 138px;">Foogle</h1></li>
+                <li>
+                    <p>Furniture based Google</p>
+                </li>
+                <li>
+                   <div  class="h1-responsive">
+            <h2 id="logo">Search for your Furniture</h2>
+           
+                <form action="/search/{{term}}?" method="GET">
+
+            <input type="text" class="form-control input-md" placeholder="search" name="term" value="{{this.term}}">
+                  
+            <button class="btn btn-info btn-lg" type="submit" >
+                            <i class="glyphicon glyphicon-search">Search</i>
+            </button>
+            </form>
+
+                  
+                </div>
+           
+        </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+<!-- <div>
+	<h1>This will be the main page, with the search and add buttons</h1>
+</div> -->
+<!-- 
 <div  class="h1-responsive">
     	
     <h2 id="logo">Search for your Furniture</h2>
            
-    	<div class="input-group">
+    	<div class="input-group"> -->
 
 <!--
 input for item search
 
  -->
 
- 			<form action="/search/{{term}}?" method="GET">
+ 		<!-- 	<form action="/search/{{term}}?" method="GET">
 
             <input type="text" class="form-control input-md" placeholder="search" name="term" value="{{this.term}}">
                   
             <button class="btn btn-info btn-lg" type="submit" >
                             <i class="glyphicon glyphicon-search"></i>
             </button>
-            </form>
+            </form> -->
 
 
 <!--
 input for show inventory
  -->
-            <form action="all/">
+        <!--     <form action="all/">
             <button class="btn btn-info btn-lg" type="submit">
                             Show inventory
             </button>
-            </form>
+            </form> -->
 
 <!--
 input for add item
  -->
-            <form action="add/">
+ <!--            <form action="add/">
             <button class="btn btn-info btn-lg" type="submit">
                             Add item to inventory
             </button>
@@ -43,4 +95,4 @@ input for add item
                   
     	</div>
            
-</div>
+</div> -->
