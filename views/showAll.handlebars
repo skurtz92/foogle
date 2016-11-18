@@ -1,29 +1,56 @@
-<div>
-	<h1>This page will display all items from inventory, with the option to delete items.</h1>
-</div>
+<body>
+<div id="wrapper">
 
-<div>
+  	<h1 style="font-family: 'Raleway', sans-serif;">Search Results</h1>
+
+ <table id="keywords" cellspacing="0" cellpadding="0">
+    <thead>
+    <tr>
 	
 <!--
 loop through database items returned from search and display each
 <input type="hidden" name="id" value="{{this.id}}">
  -->
-    <ul>
-      {{#each inventory}}
-          <li>
-            Description: {{Description}}, 
-            Item Number: {{ItemNumber}}, 
-            Quantity - MAH: {{QuantityMAH}}, 
-            Quantity - CH: {{bodyQuantityCH}}, 
-            Quantity - ESP: {{QuantityESP}}, 
-            Quantity - HNY: {{QuantityHNY}} 
-            <form action="/delete?id={{id}}" method="POST"> 
-            
-            <button type="submit">Delete item</button>
-            </form>
+  
 
-          </li>
+       
+             <th><span>Description:</span></th> 
+             <th><span>Item #:</span></th>  
+             <th><span>Mahogany</span></th>  
+             <th><span>Cherry</span></th>  
+             <th><span>Pecan</span></th>  
+             <th><span>Honey</span></th>  
+
+          </tr>
+         </thead>
+         </tbody>
+
+          {{#each inventory}}
+
+          <tr>
+         <td class="lalign">{{Description}} </td>
+          
+         <td class="lalign">{{ItemNumber}}</td>
+           
+         <td class="lalign">{{QuantityMAH}}</td> 
+           
+         <td class="lalign">{{bodyQuantityCH}}</td>
+           
+         <td class="lalign">{{QuantityESP}}</td>
+           
+         <td class="lalign"> {{QuantityHNY}}</td> </tr>
+
+           <tr><td class=lalign"><form action="/delete?id={{id}}" method="POST"> 
+            
+            <button class="btn btn-info btn-lg" type="submit">Delete item</i></button>
+            </form></td></tr>
+
+        
       {{/each}}
-    </ul>
+    
+     </tbody>
+    </table>
 
 </div>
+
+</body>
