@@ -22,8 +22,18 @@
     box-shadow: none;
     border: 0;
     color: #666666;
-    padding: 0 8px 0 10px;
-    border-left: solid 1px #ccc;
+}
+
+
+.jumbotron{
+	background-color: rgba(255, 255, 255, 0.81);
+    	padding: 15px;
+    	width: 100%;
+    	position: absolute;
+	padding: 15px;
+    	border-left: solid 1px #ccc;
+        z-index: 1;
+        margin-top: 30px;
 }
 
 #custom-search-input button:hover{

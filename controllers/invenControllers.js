@@ -23,46 +23,26 @@ router.get("/all", function(req, res) {
 //search function
 router.get("/search", function(req, res) {
 	//console.log("searched for product id: " + req.query.term);
-	models.Item.findAll({
+	models.Item.findAndCountAll({
 		where: {
 			$or: [{ItemNumber: req.query.term}, 
 				{Description: 
 					{like: "%" + req.query.term + "%"}}]
 		}
 	}).then(function(data) {
-		var itemObj = {inventory: data};
-		//console.log(itemObj);
-		res.render("searchResults", itemObj);
-	});
-});
-/*
+		var itemObj = {inventory: data.rows};
+		console.log(itemObj);
 
-router.get("/search", function(req, res) {
-	//console.log("searched for product id: " + req.query.term);
-	models.Item.findAll({
-		where: {
-			$or: [{ItemNumber: req.query.term}, {Description: req.query.term}]
+		if (data.count === 0) {
+			res.render("noResults");
 		}
-	}).then(function(data) {
-		var itemObj = {inventory: data};
-		//console.log(itemObj);
-		res.render("searchResults", itemObj);
-	});
-});
+		
+		else {
+			res.render("searchResults", itemObj);
+		}
 
-router.get("/search", function(req, res) {
-	console.log("searched for product id: " + req.query.term);
-	models.Item.findAll({
-		where: {
-			ItemNumber: req.query.term
-		}
-	}).then(function(data) {
-		var itemObj = {inventory: data};
-		//console.log(itemObj);
-		res.render("searchResults", itemObj);
 	});
 });
-*/
 
 //go to form to add item to inventory
 router.get("/add", function (req, res) {
@@ -92,8 +72,7 @@ router.post("/delete", function(req, res) {
 		}
 	});
 	res.redirect("/all");
-})
-
+});
 
 
 
