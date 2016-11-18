@@ -23,6 +23,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json({type:'application/vnd.api+json'}));
 app.use(favicon(__dirname + '/glasss.png'));
+app.use("/sweetalert", express.static(__dirname + "/sweetalert"));
 
 app.use("/", routes);
 
