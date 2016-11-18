@@ -48,6 +48,30 @@
 }
 
 #logo{
-	
+	text-align: center;
+    font-family: 'Poppins', sans-serif; 
+    font-size: 40px;
+    margin: 15px;
 }
 
+.btn {
+    background-color: 32b4e4;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display:inline-block;
+    font-size: 12px;
+    border-radius: 8px;
+
+}
+
+.btn:hover {
+    background-color: 44c3e2;
+}
+
+
+.search-results {
+    font-family: "Times New Roman", Georgia, Serif;
+}
