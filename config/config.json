@@ -1,7 +1,11 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "sammy12",
+=======
+    "password": "sprinkle1",
+>>>>>>> f200c1291c52ab7c991cbdd6ec4c2c5f389f3236
     "database": "inventory_db",
     "host": "127.0.0.1",
     "dialect": "mysql"

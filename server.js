@@ -6,6 +6,7 @@ var exphbs = require("express-handlebars");
 var routes = require("./controllers/invenControllers.js");
 var models = require("./models/");
 var path = require('path');
+var favicon = require('serve-favicon');
 
 var Item = require("./models")["Item"]
 Item.sync();
@@ -21,6 +22,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json({type:'application/vnd.api+json'}));
+app.use(favicon(__dirname + '/glasss.png'));
 
 app.use("/", routes);
 
