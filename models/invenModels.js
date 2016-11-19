@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
 
 		Description: DataTypes.STRING,
 
-		ItemNumber: DataTypes.INTEGER,
+		ItemNumber: DataTypes.STRING,
 
 		QuantityMAH: DataTypes.INTEGER,
 
